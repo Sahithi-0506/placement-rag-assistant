@@ -8,3 +8,4 @@ pypdf
 pdfplumber
 python-dotenv
 sentence-transformers
+langchain-ollama
