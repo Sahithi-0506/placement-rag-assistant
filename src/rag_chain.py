@@ -13,6 +13,7 @@ from src.reasoning_engine import (
     highest_paying_for_student,
     company_with_most_interns,
     compare_sde_amazon_google,
+    role_hiring_count,
     largest_package_growth,
     amazon_cgpa_conflict,
     companies_with_conflicting_cgpa,
@@ -78,6 +79,15 @@ def handle_reasoning_query(query):
 
     if "amazon" in q and "google" in q and "sde" in q:
         return compare_sde_amazon_google()
+
+    if "how many" in q and "sde" in q and "amazon" in q:
+        return role_hiring_count("Amazon", "sde")
+
+    if "how many" in q and "sde" in q and "google" in q:
+        return role_hiring_count("Google", "sde")
+
+    if "how many" in q and "intern" in q and "oracle" in q:
+        return role_hiring_count("Oracle", "intern")
 
     if "package grew the most" in q or "largest package growth" in q:
         return largest_package_growth()
